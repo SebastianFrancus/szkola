@@ -55,6 +55,7 @@ elPoteguj.onclick = function(){
     if(elPodstawa.value == '' || elWykladnik.value == ''){
         elWynik2.innerHTML = "Wpisz podstawe i wykladnik"
     }else{
+        elWynik2.innerHTML = Math.pow(elPodstawa.value,elWykladnik.value);
 
     }
 }
