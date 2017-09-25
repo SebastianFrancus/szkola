@@ -88,3 +88,46 @@ function zmien(element, indeks){
 elGuzik.onclick = function (){
     klub.forEach(zmien);
 }
+
+//previousElementSibling, nextElementSibling
+
+var poczatekElement = document.getElementById('s2');
+var poprzedniElement = poczatekElement.previousElementSibling;
+var nastepnyElement = poczatekElement.nextElementSibling;
+
+poczatekElement.className = 'niebieski';
+poprzedniElement.className = 'niebieski';
+nastepnyElement.className = 'niebieski';
+
+//firstChild, lastChild
+
+var lista = document.getElementsByTagName('ul')[1];
+
+var first = lista.firstElementChild;
+var last = lista.lastElementChild;
+
+first.setAttribute('class', 'czerwony');
+last.setAttribute('class', 'czerwony');
+
+
+var formularz = document.getElementsByTagName('form')[0];
+
+var tekst = formularz.firstElementChild;
+
+tekst.setAttribute('type','button');
+tekst.setAttribute('value','wyświetl');
+
+
+//połącz ze stroną szkoły zsk
+var www = document.getElementById('link');
+www.setAttribute('href','http://www.zsk.poznan.pl');
+
+
+
+
+
+
+
+
+
+
