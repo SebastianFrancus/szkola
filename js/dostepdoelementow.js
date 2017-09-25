@@ -61,3 +61,30 @@ var wszystkie = document.querySelectorAll('li');
     wszystkie[3].className = 'czerwony';
 
 }
+
+/*
+var elGuzik = document.getElementById('guzik');
+
+var klub = document.getElementsByName('klub');
+*/
+
+/*elGuzik.onclick = function(){
+    console.log(klub);
+    for (var i=0;i<klub.length;i++){
+        klub[i].className = 'niebieski';
+    }
+}*/
+
+
+//forEach
+var elGuzik = document.getElementById('guzik');
+
+var klub = document.getElementsByName('klub');
+
+function zmien(element, indeks){
+    klub[indeks].className = 'niebieski';
+}
+
+elGuzik.onclick = function (){
+    klub.forEach(zmien);
+}
