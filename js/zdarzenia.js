@@ -44,29 +44,62 @@ function sprawdz(){
     }
 }
 
-imie.addEventListener('blur', sprawdz);
-nazwisko.addEventListener('blur', sprawdz);
-login.addEventListener('blur', sprawdz);
-
 
 function email(){
     if(mail1.value == mail2.value){
         blok.textContent= ' ';
+        mail1.disabled= true;
+        mail2.disabled= true;
     }else {
         blok.textContent= 'Niezgodność mailuf';
         mail1.removeAttribute('disabled');
         mail1.focus();
+        mail1.disabled = false;
+        mail2.disabled = true;
         mail1.setAttribute('value','');
     }
 }
 
 function blokuj (){
     var blokuj = document.getElementById(this.id);
+    mail2.disabled = false;
+    mail2.focus();
     this.setAttribute('disabled','');
 }
 
 function inne() {
 
 }
+
+function pass(){
+    if(pass1.value == pass2.value){
+        blok.textContent= ' ';
+        pass1.disabled= true;
+        pass2.disabled= true;
+    }else {
+        blok.textContent= 'Niezgodność mailuf';
+        pass1.removeAttribute('disabled');
+        pass1.focus();
+        pass1.disabled = false;
+        pass2.disabled = true;
+        pass1.setAttribute('value','');
+    }
+}
+function passBlokuj (){
+    var passBlokuj = document.getElementById(this.id);
+    pass2.disabled = false;
+    pass2.focus();
+    this.setAttribute('disabled','');
+}
+
+
+
+
+
+imie.addEventListener('blur', sprawdz);
+nazwisko.addEventListener('blur', sprawdz);
+login.addEventListener('blur', sprawdz);
 mail2.addEventListener('blur', email);
 mail1.addEventListener('blur', blokuj);
+pass2.addEventListener('blur',pass);
+pass1.addEventListener('blur',passBlokuj)
