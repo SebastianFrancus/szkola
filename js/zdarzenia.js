@@ -93,8 +93,44 @@ function passBlokuj (){
 }
 
 
+function sprawdzRegulamin() {
+    if(regulamin.checked){
+        przycisk.disabled = false;
+    }else{
+        przycisk.disabled = true;
+    }
+}
 
+function odblokuj(){
+    var zablokowane = document.getElementsByTagName('input');
+    if(zablokowane.length>0){
+     //   console.log(zablokowane);
+    }
 
+    for (var i =0;i<zablokowane.length;i++){
+        if(zablokowane[i].disabled == true)
+            zablokowane[i].disabled = false;
+    }
+}
+
+function wyslij() {
+    var dokument = document.getElementsByTagName('fieldset')[0];
+    if(ostateczne()==true){
+    dokument.style.display = "none";
+    document.write('Imię: ' + imie.value +'<br> Nazwisko: '+ nazwisko.value + '<br> Login: ' + login.value + '<br> Mail: '+ mail2.value + '<br> Data: '+ data.value)
+} else {
+    blok.innerHTML = "Zostawiłeś puste dane";
+}
+}
+function ostateczne() {
+    var wprowadz = wprowadz.getElementsByTagName('input')[0];
+    for(var i = 0;i <= wprowadz.length;i++){
+        if(wprowadz[i]=''){
+            return false;
+        }
+    }
+    return true;
+}
 
 imie.addEventListener('blur', sprawdz);
 nazwisko.addEventListener('blur', sprawdz);
@@ -103,3 +139,7 @@ mail2.addEventListener('blur', email);
 mail1.addEventListener('blur', blokuj);
 pass2.addEventListener('blur',pass);
 pass1.addEventListener('blur',passBlokuj)
+regulamin.addEventListener('change', sprawdzRegulamin);
+popraw.addEventListener('click', odblokuj);
+przycisk.addEventListener('click', wyslij);
+
