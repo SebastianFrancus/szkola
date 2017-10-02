@@ -31,6 +31,7 @@ var tekst = ".pl"
 //var regEx = /(text){2}/;   // grupa x2 'texttext' obok siebie musi byc
 //var sprawdz = regEx.test(tekst);
 //console.log(sprawdz);
+/*
 var tekst = document.getElementById('tekst');
 var regEx=/\d{2,2}-\d{3,3}/;
 var blok = document.getElementById('blok');
@@ -46,5 +47,12 @@ function kodPocztowy() {
     }
 }
 tekst.addEventListener('input',kodPocztowy);
+*/
 
+// var regEx = /\w+\.mp3/ // cala nazwa pliku z rozszerzeniem .mp3
+var regEx = /\w+\.mp3/g;
 
+var pliki = 'plik.mp3 arkusz.csv muzyka.mp3 zsk.mp3';
+//var sprawdz1 = regEx.test(pliki);
+var sprawdz1 = pliki.match(regEx);
+console.log(sprawdz1);
