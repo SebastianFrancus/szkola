@@ -11,3 +11,12 @@ h1
 {
     text-decoration: underline;
 }
+#tabela1, th, td {
+    border:1px solid aqua;
+    width:400px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}

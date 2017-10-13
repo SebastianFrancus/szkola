@@ -17,5 +17,8 @@ jQuery(document).ready(function(){ //jQuery = '$'
    $('#zmienKolor').click(function(){
     $('#kolor').css('color','blue');
 });
+    $('a').css('color','lime');
+
+
 });
 
